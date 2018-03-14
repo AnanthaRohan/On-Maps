@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>On Maps | Update Goods</title>
+{% endblock %}
+{% block head %}
+{% endblock %}
+{% block body %}
+<style media="screen">
+html{
+  background-image: url("https://cn.pling.com/img/1/a/7/d/5d6291d4f7be91e68597555bc4e86334f80d.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body{
+  background-color: transparent
+}
+</style>
+
+<div class="container text-center" style="width:20rem;opacity:0.8;color:white;background-color:transparent">
+<div class="row">
+  <div class="col">
+    <form class="form-control" method="POST" style="border-color:transparent;width:20rem;color:white;background-color:black;padding-bottom:2rem" >
+      <h3 style="color:white">Update Your goods here</h3>
+      <br>
+      {% csrf_token %}
+      {{form.as_p}}
+      <button type="submit" class="btn btn-primary" name="button">Add</button>
+    </form>
+  </div>
+</div>
+
+</div>
+
+
+
+{% endblock %}

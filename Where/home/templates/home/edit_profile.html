@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>On Maps | Edit Profile</title>
+{% endblock %}
+{% block head %}
+{% endblock %}
+{% block body %}
+<style media="screen">
+html{
+  background-image: url("https://cn.pling.com/img/1/a/7/d/5d6291d4f7be91e68597555bc4e86334f80d.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body{
+  background-color: transparent
+}
+</style>
+<div class="container text-center" style="width:20rem;opacity:0.8;color:white;background-color:transparent">
+  <div class="col">
+    <form class="form-control" method="POST" style="border-color:transparent;width:20rem;color:white;background-color:black;padding-bottom:2rem">
+      <h3 style="color:white">Edit or Update your profile</h3>
+      <br>
+      <br>
+      {% csrf_token %}
+      <span class="container">Email:</span>
+      {{form.email}}
+      <br>
+      <br>
+      <span class="container text-left" id="">First name:</span>
+      {{form.first_name}}
+      <br>
+      <br>
+      <span class="container text-left" id="">Last name:</span>
+      {{form.last_name}}
+      <br>
+      <br>
+       <p>To Change Password Click here</p>
+      <a href="http://127.0.0.1:8000/profile/edit_profile/changepw" class="btn btn-primary">Change Password</a>
+      {{p.as_p}}
+
+      <button type="submit" class="btn btn-primary" name="button">Submit</button>
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}
